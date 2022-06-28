@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS receptas (
+    id SMALLINT ZEROFILL NOT NULL AUTO_INCREMENT,
+    pavadinimas VARCHAR(100) NOT NULL,
+    kalorijos SMALLINT,
+    kategorija VARCHAR(100) NOT NULL,
+     PRIMARY KEY(id)
+ );
