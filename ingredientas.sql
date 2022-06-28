@@ -1,3 +1,12 @@
+--Susikuriu ingredientu lentele.
+CREATE TABLE IF NOT EXISTS `ingredientas` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `kaina` double NOT NULL,
+  `kalorijos_per100g` int(11) NOT NULL,
+  `pavadinimas` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
 --1. Grąžinkite visų ingredientų kainą. (ingredientų lentelės kainos stulpelį).
 SELECT
     kaina
