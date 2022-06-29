@@ -42,3 +42,22 @@ INSERT INTO `receptas` (`id`, `kaina`, `kalorijos_per100g`, `nurodymai`, `pavadi
 
 
 --6. Grąžinkite visų receptų id ir pavadinimą.
+SELECT
+    id, pavadinimas
+FROM
+    `receptas`
+
+--7. Grąžinkite vidutinę receptų kainą.
+SELECT
+    AVG(kaina)
+FROM
+    `receptas`
+
+--8. Grąžinkite visų kainų sumą.
+SELECT
+    SUM(kaina)
+FROM
+    `receptas`
+
+--9. Grąžinkite receptų id ir pavadinimą, kurie yra nuo 3 iki 8 id ir turi daugiau nei 500 kalorijų.
+
