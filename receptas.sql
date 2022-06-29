@@ -110,4 +110,20 @@ WHERE
 );         
 
 --14. Grąžinkite top 3 brangiausių receptų kainas
+SELECT
+    kaina
+FROM
+    `receptas`
+ORDER BY
+	kaina DESC
+LIMIT 3
+
+--15. Grąžinkite top 5 pigiausių receptų id ir pavadinimus. 
+SELECT
+    id, pavadinimas
+FROM
+    `receptas`
+ORDER BY
+	kaina ASC
+LIMIT 5
 
