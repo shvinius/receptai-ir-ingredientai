@@ -60,4 +60,54 @@ FROM
     `receptas`
 
 --9. Grąžinkite receptų id ir pavadinimą, kurie yra nuo 3 iki 8 id ir turi daugiau nei 500 kalorijų.
+SELECT
+    id, pavadinimas
+FROM
+    `receptas`
+WHERE
+   id >= 3 AND id <= 8 AND kalorijos_per100g >= 500;
+
+--10. Grąžinkite receptų pavadinimą ir kalorijos_per100g, kurie yra pigesni nei 10 ir turi mažiau kalorijų nei 350
+SELECT
+    pavadinimas, kalorijos_per100g
+FROM
+    `receptas`
+WHERE
+    kaina < 10 AND kalorijos_per100g < 350
+
+--11. Grąžinkite receptų nuo 1 iki 5 id vidutinį kalorijų skaičių.
+SELECT
+    AVG (kalorijos_per100g)
+FROM
+    `receptas`
+WHERE
+    id >= 1 AND id <=5;
+
+--12. Grąžinkite brangiausio recepto id ir pavadinimą.
+SELECT
+    id, pavadinimas
+FROM
+    `receptas`
+WHERE
+     kaina =(
+    SELECT
+        MAX(kaina)
+    FROM
+        `receptas`
+);         
+
+--13. Grąžinkite daugiausiai kaloringo recepto pavadinimą ir nurodymus.
+SELECT
+    pavadinimas, nurodymai
+FROM
+    `receptas`
+WHERE
+     kalorijos_per100g =(
+    SELECT
+        MAX(kalorijos_per100g)
+    FROM
+        `receptas`
+);         
+
+--14. Grąžinkite top 3 brangiausių receptų kainas
 
