@@ -1,12 +1,11 @@
 --Susikuriu ingredientu lentele.
 CREATE TABLE IF NOT EXISTS `ingredientas` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `kaina` double NOT NULL,
-  `kalorijos_per100g` int(11) NOT NULL,
+  `id` TINYINT NOT NULL,
+  `kaina` DECIMAL (6,2) NOT NULL,
+  `kalorijos_per100g` SMALLINT NOT NULL,
   `pavadinimas` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
-
+);
 INSERT INTO `ingredientas` (`id`, `kaina`, `kalorijos_per100g`, `pavadinimas`) VALUES
 (1, 6.12, 166, 'Vištiena'),
 (2, 8.55, 39, 'Jautienos faršas'),
@@ -24,6 +23,7 @@ INSERT INTO `ingredientas` (`id`, `kaina`, `kalorijos_per100g`, `pavadinimas`) V
 (14, 3.59, 436, 'Agurkas'),
 (15, 2.57, 84, 'Couscous'),
 (16, 0.69, 44, 'Duona');
+
 
 --1. Grąžinkite visų ingredientų kainą. (ingredientų lentelės kainos stulpelį).
 SELECT
