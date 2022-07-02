@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `visos_alergijos` (
   `id` TINYINT NOT NULL,
-  `pavadinimas` varchar(255) DEFAULT NULL,
+  `pavadinimas` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
 

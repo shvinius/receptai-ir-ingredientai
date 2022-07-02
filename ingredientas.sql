@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `ingredientas` (
   `id` TINYINT NOT NULL,
   `kaina` DECIMAL (6,2) NOT NULL,
   `kalorijos_per100g` SMALLINT NOT NULL,
-  `pavadinimas` varchar(255) DEFAULT NULL,
+  `pavadinimas` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 );
 INSERT INTO `ingredientas` (`id`, `kaina`, `kalorijos_per100g`, `pavadinimas`) VALUES
