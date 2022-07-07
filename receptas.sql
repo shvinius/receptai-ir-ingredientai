@@ -109,3 +109,5 @@ ORDER BY
 	kaina ASC
 LIMIT 5
 
+ALTER TABLE receptas
+DROP COLUMN kategorija;
