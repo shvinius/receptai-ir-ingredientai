@@ -1,0 +1,1 @@
+--1. Grąžinkite pirmo recepto visų ingredientų id ir pavadinimus.
