@@ -69,3 +69,15 @@ JOIN
 	ingredientas i ON i.id = s.ingredientas_id
 WHERE
     r.id >= 1 AND r.id <= 3;
+
+--7. Grąžinkite receptų id, pavadinimą ir nurodymus, kurie yra “Universali” virtuvės receptai.
+SELECT 
+    r.id, r.pavadinimas, r.nurodymai
+FROM
+    `receptas` r
+JOIN    
+	sujungimas_receptai_virtuve s ON r.id = s.receptas_id
+JOIN
+	virtuves_salys v ON v.id = s.virtuve_salis_id
+WHERE
+    v.id = 3
