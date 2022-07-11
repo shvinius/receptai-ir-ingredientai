@@ -56,11 +56,11 @@ JOIN
 JOIN
     visos_alergijos a ON a.id = s.visos_alergijos_id
 WHERE 
-    kaina < 7.20
+    r.kaina < 7.20
 
 --6. Grąžinkite kokie ingredientai yra naudojami pirmame, antrame ir trečiame recepte, tačiau pasikartojančių ingredientų neišveskite antrą kartą (tam naudojamas SELECT DISTINCT)
-SELECT
-    DISTINCT
+SELECT DISTINCT
+    i.pavadinimas
 FROM
     `receptas` r
 JOIN    
@@ -68,5 +68,4 @@ JOIN
 JOIN
 	ingredientas i ON i.id = s.ingredientas_id
 WHERE
-    r.id = 1, r.id = 2, r.id = 3,
-
+    r.id >= 1 AND r.id <= 3;

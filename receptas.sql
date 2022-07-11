@@ -4,7 +4,6 @@ CREATE TABLE IF NOT EXISTS `receptas` (
   `kaina` DECIMAL (6,2) NOT NULL,
   `kalorijos_per100g` SMALLINT NOT NULL,
   `pavadinimas` varchar(255) NOT NULL,
-  `kategorija` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
