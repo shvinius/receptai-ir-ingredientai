@@ -1,26 +1,24 @@
 --Susikuriu receptu lentele.
 CREATE TABLE IF NOT EXISTS `receptas` (
   `id` TINYINT NOT NULL,
-  `kaina` DECIMAL (6,2) NOT NULL,
+  `pavadinimas` VARCHAR(255) NOT NULL,
+  `nurodymai` VARCHAR(1000) NOT NULL,
   `kalorijos_per100g` SMALLINT NOT NULL,
-  `pavadinimas` varchar(255) NOT NULL,
+  `kaina` DECIMAL (6,2) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `receptas` (`id`, `kaina`, `kalorijos_per100g`, `pavadinimas`, `kategorija`) VALUES
-(1, 6.85, 600, 'Tabule couscous salotos', 'Vegetariški'),
-(2, 15.03, 831, 'Tablue lebanietiškos salotos', 'Vegetariški'),
-(3, 12.97, 622, 'Jautienos faršas su svogūnais', 'Pasaulio'),
-(4, 26.86, 663, 'Kepta vištiena su svogūnu ir petražolėmis', 'Pasaulio'),
-(5, 19.22, 754, 'Keptos bulvės su grietine', 'Vegetariški'),
-(6, 9.52, 352, 'Bulvių košė', 'Vegetariški'),
-(7, 18.76, 329, 'Teriyaki vištiena', 'Azijietiški'),
-(8, 27.23, 1410, 'Lęšių ir avinžirnių sriuba', 'Vegetariški'),
-(9, 8.12, 288, 'Avižinė košė', 'Vegetariški'),
-(10, 8.75, 596, 'Mutinys', 'Lietuviški'),
-(11, 2, 100, 'Košė', 'Vegetariški'),
-(12, 3, 150, 'Salotos', 'Vegetariški'),
-(17, 3.17, 100, 'Kotletai', 'Pasaulio');
+INSERT INTO `receptas` (`id`, `pavadinimas`, `nurodymai`, `kalorijos_per100g`, `kaina`) VALUES
+(1, 'Tabule couscous salotos', '1. Paruošiame couscous 2. Supjausstom daržoves ir viską suberiam į vieną.', 564, '6.85'),
+(2, 'Tablue lebanietiškos salotos', '1. Supjausstom daržoves ir viską suberiam į vieną.', 831, '15.03'),
+(3, 'Jautienos faršas su svogūnais', '1. Pakepiname faršą. 2. Pakepinam svogūną. 3. Viską į vieną', 622, '12.97'),
+(4, 'Kepta vištiena su svogūnu ir petražolėmis', '1. Supjaustome vištieną. 2. Pakepiname vištieną 3. Pakepiname svogūną ir petražolę. 4.Viską į vieną', 663, '26.86'),
+(5, 'Keptos bulvės su grietine', '1. Supjaustom bulves ir svogūną. 2. Pakepinam bulves ir svogūną. 3. Sumaišome su grietine', 754, '19.22'),
+(6, 'Bulvių košė', '1. Supjaustyti bulves 2. Išvirti 3. Sutrinti bulves maišant su pienu', 352, '9.52'),
+(7, 'Teriyaki vištiena', '1. Supjaustyti juostelėmis vištieną. 2. Užmarinuoti teriyaki padaže. 3. Iškepti', 329, '18.76'),
+(8, 'Lęšių ir avinžirnių sriuba', '1. Supjaustyt daržoves. 2. Virti daržoves ir lęšius. 3. Sutrinti daržoves ir lęšius. 4. Įdėti avinžirnius ir truputį pavirti. 5. Pateikti su grietine', 1410, '27.23'),
+(9, 'Avižinė košė', '1. Išvirti dribsnius piene', 288, '8.12'),
+(10, 'Mutinys', '1. Sumaišyti duoną, braškes ir pieną', 596, '8.75');
 
 --6. Grąžinkite visų receptų id ir pavadinimą.
 SELECT
@@ -107,6 +105,3 @@ FROM
 ORDER BY
 	kaina ASC
 LIMIT 5
-
-ALTER TABLE receptas
-DROP COLUMN kategorija;

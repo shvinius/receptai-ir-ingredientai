@@ -48,7 +48,7 @@ WHERE
 
 --5. Grąžinkite visas alergijas receptų, kurių kaina yra mažiau nei 7.20.    
 SELECT
-    *
+    a.*
 FROM
     `receptas` r
 JOIN 
