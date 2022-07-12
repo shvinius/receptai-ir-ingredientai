@@ -81,3 +81,15 @@ JOIN
 	virtuves_salys v ON v.id = s.virtuve_salis_id
 WHERE
     v.id = 3
+
+--8. Grąžinkite visas devinto (id) ingrediento alergijas (id ir pavadinimas stulpelius) surikiuotus abėcėlės didėjančia tvarka pagal pavadinimo stulpelį.    
+SELECT 
+    v.id, v.pavadinimas
+FROM
+    `ingredientas` i
+JOIN    
+	sujungimas_ingredientai_ir_alergijos s ON i.id = s.id_ingredientas
+JOIN
+	visos_alergijos v ON v.id = s.id_visos_alergijos
+WHERE
+    i.id = 9
